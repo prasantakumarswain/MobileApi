@@ -1,0 +1,10 @@
+- if current_admin
+  %li
+    %a{:href => "/admins/device_info"} Device
+  %li
+    %a{:href => "/admins/add_user"} AddUser
+  %li
+    %a{:href => "/logout"} logout
+-else
+  %li
+    %a{:href => "/login"} login

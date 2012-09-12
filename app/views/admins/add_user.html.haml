@@ -1,0 +1,13 @@
+= form_tag admins_path,  :id => "add_pg", :class => "form-horizontal",:style => "margin: auto; width:400px;", :method => "POST" do |f|
+  %fieldset
+    #legend
+      %legend Add User
+    .control-group
+      %label.control-label Email
+      .controls
+        =email_field_tag :email, params[:email]
+    .control-group
+      .controls
+        =submit_tag "Add User", :class => "btn  btn-success"
+        =link_to "Cancel", "/admins", :class => "btn"
+

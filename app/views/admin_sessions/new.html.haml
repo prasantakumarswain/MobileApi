@@ -1,0 +1,24 @@
+- if @admin_session.errors.any?
+  .alert.alert-error{:align => "center"}
+    %a.close{"data-dismiss" => "alert"} ×
+    - @admin_session.errors.full_messages.each do |msg|
+      %p= msg
+
+
+= form_for @admin_session, :html => {:id => "add_pg", :class => "form-horizontal",:style => "margin: auto; width:400px;"} do |f|
+  %fieldset
+    #legend
+      %legend Admin Login
+  .control-group
+    %label.control-label
+      =f.label :email
+    .controls
+      =f.email_field :email
+  .control-group
+    %label.control-label
+      =f.label :password
+    .controls
+      =f.password_field :password
+  .control-group
+    .controls{:style => "color: blue;"}
+      =f.submit "Login", :class => "btn  btn-success"

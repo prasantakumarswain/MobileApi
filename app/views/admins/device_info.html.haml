@@ -1,0 +1,19 @@
+%table.table.table-bordered
+  %colgroup
+    %col.span1
+      %col.span1
+        %col.span2
+  %caption
+    %h2
+      Device List
+  %thead
+    %tr
+      %th Id
+      %th Name
+      %th qr_code
+  %tbody
+    - @device.each do |device|
+      %tr
+        %td= device.device_id
+        %td= device.device_name
+        %td= device.qr_code
